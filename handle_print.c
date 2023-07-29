@@ -47,4 +47,3 @@ int handle_print(const char *fmt, int *ind, va_list list, char buff_var[],
 	}
 	return (chars_printed);
 }
-
