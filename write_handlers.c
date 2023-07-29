@@ -7,7 +7,7 @@
  * @buff_var: this is a buffer array for print
  * @flag_v:  this calculate all active flag_v .
  * @wid_var: get wid_var.
- * @prec_var: specifies prec_var 
+ * @prec_var: specifies prec_var
  * @siz_var:  specifies size
  *
  * Return: this returns number of all chars printed.
@@ -50,9 +50,9 @@ int handle_write_char(char c, char buff_var[],
  * @is_negative: List a of arguments
  * @ind: ind char types.
  * @buff_var: this is a buffer array for print
- * @flag_v:  this calculate all active flag_v 
+ * @flag_v:  this calculate all active flag_v
  * @wid_var: get wid_var.
- * @prec_var: specifies prec_var 
+ * @prec_var: specifies prec_var
  * @siz_var:  specifies size
  *
  * Return: this returns number of all chars printed.
@@ -112,7 +112,7 @@ int write_num(int ind, char buff_var[],
 		for (i = 1; i < wid_var - length + 1; i++)
 			buff_var[i] = padd;
 		buff_var[i] = '\0';
-		if (flag_v & F_MINUS && padd == ' ')/* Asign extra char to left of buff_var */
+		if (flag_v & F_MINUS && padd == ' ')/* Assign extra char to left of buff */
 		{
 			if (extra_c)
 				buff_var[--ind] = extra_c;
@@ -182,7 +182,7 @@ int write_unsgnd(int is_negative, int ind,
 
 		buff_var[i] = '\0';
 
-		if (flag_v & F_MINUS) /* Assigning extra char to left of buff_var [buff_var>padd]*/
+		if (flag_v & F_MINUS) /* Assigning extra char to left of [buff_var>padd]*/
 		{
 			return (write(1, &buff_var[ind], length) + write(1, &buff_var[0], i));
 		}
@@ -218,7 +218,7 @@ int write_pointer(char buff_var[], int ind, int length,
 		for (i = 3; i < wid_var - length + 3; i++)
 			buff_var[i] = padd;
 		buff_var[i] = '\0';
-		if (flag_v & F_MINUS && padd == ' ')/* Assigning extra char to left of buff_var */
+		if (flag_v & F_MINUS && padd == ' ')/* Assigning extra char to buff_var */
 		{
 			buff_var[--ind] = 'x';
 			buff_var[--ind] = '0';
@@ -226,7 +226,7 @@ int write_pointer(char buff_var[], int ind, int length,
 				buff_var[--ind] = extra_c;
 			return (write(1, &buff_var[ind], length) + write(1, &buff_var[3], i - 3));
 		}
-		else if (!(flag_v & F_MINUS) && padd == ' ')/* extra char to left of buff_var all */
+		else if (!(flag_v & F_MINUS) && padd == ' ')/* extra char to buff_var all */
 		{
 			buff_var[--ind] = 'x';
 			buff_var[--ind] = '0';
@@ -234,7 +234,7 @@ int write_pointer(char buff_var[], int ind, int length,
 				buff_var[--ind] = extra_c;
 			return (write(1, &buff_var[3], i - 3) + write(1, &buff_var[ind], length));
 		}
-		else if (!(flag_v & F_MINUS) && padd == '0')/* extra char to left of padding all */
+		else if (!(flag_v & F_MINUS) && padd == '0')/* extra char to padding all */
 		{
 			if (extra_c)
 				buff_var[--padd_start] = extra_c;
@@ -250,4 +250,3 @@ int write_pointer(char buff_var[], int ind, int length,
 		buff_var[--ind] = extra_c;
 	return (write(1, &buff_var[ind], BUFF_SIZE - ind - 1));
 }
-
