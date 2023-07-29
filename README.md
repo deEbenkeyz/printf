@@ -1,2 +1,2 @@
 Printf Project
-project completed by emmanunel and newton 
+project completed by Ebenezer and Newton
